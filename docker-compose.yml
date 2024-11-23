@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    container_name: hotel-app
+    image: hotel
+    build: .
+    ports:
+      - "8081:8081"
+    depends_on:
+        - hotel-server
+
+  hotel-server:
+    container_name: hotel-server
+    image: danicattaneob/labo-iv-final-2023-12-19:1.0.0
+    ports:
+      - "8080:8080"
